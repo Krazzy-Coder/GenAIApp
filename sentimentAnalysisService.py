@@ -12,7 +12,7 @@ def analyze_journals(journal_text: str) -> str:
     messages = [
         SystemMessage(content=(
             "You are a professional sentiment analyzer. "
-            "Analyze the following journal entries separated by commas and write a 1-liner emotional summary of how the user felt overall this week."
+            "Analyze the following journal entries separated by commas and write a 1-liner emotional summary of how the person felt overall this week."
         )),
         HumanMessage(content=journal_text)
     ]
