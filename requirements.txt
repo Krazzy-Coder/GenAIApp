@@ -1,0 +1,8 @@
+langchain
+langgraph
+ipykernel
+python-dotenv
+langchain-google-genai
+langchain-openai
+uvicorn
+fastapi
