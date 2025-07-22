@@ -6,7 +6,7 @@ from langchain_core.output_parsers import StrOutputParser
 import streamlit as st
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
-from langchain_community.llms import Ollama
+from langchain_ollama import OllamaLLM
 
 load_dotenv()
 
@@ -14,7 +14,7 @@ load_dotenv()
 # Download and install Ollama
 # Run command in terminal 'ollama run <open-source_model_name>'
 # open-source_model_name = deepseek-r1, llama2, etc
-llm = Ollama(model="deepseek-r1")
+llm = OllamaLLM(model="deepseek-r1")
 
 chatTemplate = ChatPromptTemplate.from_messages([
     ("system", "You are a helpful assistant. Please respond to the user questions."),

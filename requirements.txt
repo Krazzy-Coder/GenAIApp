@@ -9,3 +9,7 @@ fastapi
 langchain-core
 streamlit
 langchain_community
+langserve
+sse_starlette
+langchain_ollama
+pydantic
