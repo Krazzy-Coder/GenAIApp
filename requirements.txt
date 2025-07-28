@@ -13,3 +13,8 @@ langserve
 sse_starlette
 langchain_ollama
 pydantic
+bs4
+pypdf
+faiss-cpu
+beautifulSoup4
+langchain_groq
