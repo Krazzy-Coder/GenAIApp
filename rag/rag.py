@@ -81,7 +81,7 @@ vectorDB = FAISS.from_documents(chunks, embedding_model)
 
 
 
-## OPTION 1
+## OPTION 3
 from langchain_core.prompts import ChatPromptTemplate
 prompt = ChatPromptTemplate.from_template("""
 Answer the following question based only on the provided context. 
@@ -101,4 +101,35 @@ rag_chain = create_retrieval_chain(retriever, document_chain)
 query = "What is the name of the candidate and where does the candidate work currently?"
 response = rag_chain.invoke({"input": query})
 
-print(response["answer"])
+# print(response["answer"])
+
+
+
+
+
+######################################################################## ADVANCED RAG PIPELINE WITH MULTIPLE DATA SOURCE
+
+
+
+
+
+
+
+######################################################################## GROQ INFERENCE ENGINE
+from langchain_groq import ChatGroq
+
+llmGroq = ChatGroq(
+    model="llama-3.1-8b-instant",
+    temperature=0.0,
+    max_retries=2,
+    # other params...
+    )
+promptTemplate = ChatPromptTemplate.from_messages([
+    ("system", "You're a pro sentiment analyzer."),
+    ("human", "{text}")
+])
+
+prompt = promptTemplate.invoke({"text": "i am really happy today. Good mood"})
+ai_msg = llmGroq.invoke(prompt)
+print(ai_msg)
+
